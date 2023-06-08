@@ -4,7 +4,7 @@ import { Landing } from "./Features/Landing";
 
 
 export function App(){
-    return <Box p={20}>
+    return <Box p={{base:10,md:20}}>
     <Header/>
     <Landing/>
     </Box>
