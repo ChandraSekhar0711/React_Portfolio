@@ -1,7 +1,7 @@
 import { ProjectAPI } from "@/api/projects";
 import { Badges } from "@/components/Badges";
 import { ImageSlider } from "@/components/imageSlider/ImageSlider";
-import { Box, Flex, Heading, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { Badge, Box, Flex, HStack, Heading, Link, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -18,9 +18,14 @@ export function LatestProjects() {
         return <WrapItem flexDirection={"column"} key={project.id}>
             
             <ImageSlider imageList={project.images.map((image)=>image.downloadURL)}/>
+            <HStack gap={100}>
             <Heading size={"md"} color="secondary" mt="3" >
                 <Box display={"inline-block"} h={1} w={25} bg={"primary.dark"} mr={3} verticalAlign={"middle"} />
-                {project.title}</Heading>
+                {project.title}
+            </Heading>
+            
+                <Badge ><Link href={project.previews } isExternal>DEMO</Link> </Badge>
+                </HStack>
                 <Text>{project.desc[i18n.language]}</Text>
                 <Wrap mt={"2"} maxWidth={350}>
             {project.technologies.map((skill,index)=>(
