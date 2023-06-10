@@ -1,4 +1,4 @@
-import { Badge, Box, Flex, Heading, Image, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { Badge, Box, Flex, Heading, Image, Text, Wrap, WrapItem, useColorMode } from "@chakra-ui/react";
 import humanImg from "@/assets/images/human.png";
 import { useTranslation } from "react-i18next";
 import { Badges } from "@/components/Badges";
@@ -12,11 +12,15 @@ const SKILLS = [
 
 
 ];
+
 export function Landing() {
+    // eslint-disable-next-line no-unused-vars
+    const { colorMode, toggleColorMode } = useColorMode()
+   
     const {t} = useTranslation("home");
     const left = <Box>
-        <Heading fontSize={{ base: "3xl", md: "4xl", xl: "7xl" }} color="secondary" whiteSpace="pre-line">{t("greetings")}<Text as="span" color="primary.dark">.</Text> </Heading>
-        <Text color="secondary" fontSize="lg">{t("iAm")} <Text as="span" fontWeight="bold" >{t("job")}, </Text>{t("location")}</Text>
+        <Heading fontSize={{ base: "3xl", md: "4xl", xl: "7xl" }} color={colorMode === 'light' ? 'secondary' : 'Light'} whiteSpace="pre-line">{t("greetings")}<Text as="span" color="primary.dark">.</Text> </Heading>
+        <Text color={colorMode === 'light' ? 'secondary' : 'Light'} fontSize="lg">{t("iAm")} <Text as="span" fontWeight="bold" >{t("job")}, </Text>{t("location")}</Text>
         
         <Wrap mt={"14"}>
         {SKILLS.map((skill,index)=>(
@@ -29,7 +33,7 @@ export function Landing() {
     </Box>;
     const badgeExperience = <Badge bg="primary.light" borderRadius={7} padding={3} textAlign="center">
         <Text color="secondary" fontSize="xl"> {new Date().getFullYear()-2021}</Text>
-        <Text>{t("yearsExp")}</Text>
+        <Text color="secondary">{t("yearsExp")}</Text>
 
     </Badge>
     const right =

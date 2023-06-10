@@ -1,13 +1,15 @@
 import { ProjectAPI } from "@/api/projects";
 import { Badges } from "@/components/Badges";
 import { ImageSlider } from "@/components/imageSlider/ImageSlider";
-import { Badge, Box, Flex, HStack, Heading, Link, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import { Badge, Box, Flex, HStack, Heading, Link, Text, Wrap, WrapItem, useColorMode } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export function LatestProjects() {
     const {t,i18n} = useTranslation("home");
     const [projects, setProjects] = useState();
+    // eslint-disable-next-line no-unused-vars
+    const { colorMode, toggleColorMode } = useColorMode()
     useEffect(()=>{
     (async ()=>{
         const allProjects = await ProjectAPI.fetchAll();
@@ -19,7 +21,7 @@ export function LatestProjects() {
             
             <ImageSlider imageList={project.images.map((image)=>image.downloadURL)}/>
             <HStack gap={100}>
-            <Heading size={"md"} color="secondary" mt="3" >
+            <Heading size={"md"} color={colorMode === 'light' ? 'secondary' : 'Light'} mt="3" >
                 <Box display={"inline-block"} h={1} w={25} bg={"primary.dark"} mr={3} verticalAlign={"middle"} />
                 {project.title}
             </Heading>
@@ -39,7 +41,7 @@ export function LatestProjects() {
     return (
         <Flex direction={"column"} w="100%">
             <Heading>{t("project")}</Heading>
-            <Wrap mt={10} spacing={16} >
+            <Wrap mt={10} spacing="50" >
                 {projects?.map(renderProjects)}
             </Wrap>
         </Flex>
