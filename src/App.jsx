@@ -10,7 +10,7 @@ export function App(){
 
       return (
         <>
-        <Box p={{base:10,md:20}}>
+        <Box p={{base:10,md:10}}>
           <Header />
           <Landing />
           <LatestProjects/>

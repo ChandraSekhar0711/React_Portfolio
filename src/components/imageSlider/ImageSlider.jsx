@@ -55,7 +55,7 @@ export function ImageSlider({ imageList }) {
     >
       <ModalOverlay />
       <ModalContent bg="transparent" boxShadow={"none"}>
-        <ModalCloseButton zIndex={1} bg="white" />
+        <ModalCloseButton zIndex={1} bg="white" color="secondary" />
         <ModalBody>{slider}</ModalBody>
       </ModalContent>
     </Modal>
