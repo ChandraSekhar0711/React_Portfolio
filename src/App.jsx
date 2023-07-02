@@ -15,6 +15,7 @@ export function App(){
           <Landing />
           <LatestProjects/>
         </Box>
+        
         <Footer/>
         </>
         

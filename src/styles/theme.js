@@ -13,14 +13,14 @@ const colors = {
   NodeJS: "#000000bc",
   ES6: "#fea154",
   HTML: "#E72F09",
-  CSS: "#3878F4",
+  CSS: "#46A094",
   Bootstrap: "#9038f4",
   Firebase: "#feba54",
   Vercel: "grey",
   ChakraUI: "#31b03e",
   Python:"#3878F4",
   Ansible:"#0F1B61",
-  Javascript: "#feba54",
+  Javascript: "#244D61",
 };
 
 const fonts = {

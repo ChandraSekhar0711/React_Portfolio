@@ -1,0 +1,12 @@
+.scroll{
+    position: "fixed";
+    bottom: "20px";
+    right: "20px";
+    zIndex: "9999";
+    padding: "10px";
+    borderRadius: "50%";
+    background: "#333";
+    color: "#fff";
+    border: "none";
+    cursor: "pointer";
+}

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   Badge,
   Box,
+  Button,
   Flex,
   Heading,
   Image,
@@ -13,17 +14,21 @@ import {
 import humanImg from "@/assets/images/human.png";
 import { useTranslation } from "react-i18next";
 import { Badges } from "@/components/Badges";
+import { DownloadIcon } from "@chakra-ui/icons";
 
 const SKILLS = [
   { label: "React" },
   { label: "Redux" },
   { label: "Javascript" },
+  { label: "CSS" },
   { label: "Bootstrap" },
+  { label: "HTML" },
   { label: "Python" },
   { label: "Ansible" },
 ];
 
 export function Landing() {
+  // eslint-disable-next-line no-unused-vars
   const { colorMode, toggleColorMode } = useColorMode();
   const { t } = useTranslation("home");
 
@@ -69,7 +74,13 @@ export function Landing() {
         </Text>
         {t("location")}
       </Text>
-
+      <Wrap>
+      <Button mt={"1.5"} transform={`translateY(${offset}px)`}>
+      <DownloadIcon/>&nbsp;&nbsp;Resume
+      </Button>
+      </Wrap>
+      
+      
       <Wrap mt={"14"} transform={`translateY(${offset}px)`}>
         {SKILLS.map((skill, index) => (
           <WrapItem key={index}>
@@ -77,7 +88,10 @@ export function Landing() {
           </WrapItem>
         ))}
       </Wrap>
+
+      
     </Box>
+    
   );
 
   const badgeExperience = (
