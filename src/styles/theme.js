@@ -21,6 +21,7 @@ const colors = {
   Python:"#3878F4",
   Ansible:"#0F1B61",
   Javascript: "#244D61",
+  Git:"#330066",
 };
 
 const fonts = {

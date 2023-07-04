@@ -33,7 +33,7 @@ import {
       const handleScroll = () => {
         if (headerRef.current) {
           const { top } = headerRef.current.getBoundingClientRect();
-          setOffset(top * 0.4); // Adjust the parallax effect speed as needed
+          setOffset(top * 0.2); // Adjust the parallax effect speed as needed
         }
       };
   

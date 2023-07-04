@@ -20,6 +20,7 @@ const SKILLS = [
   { label: "React" },
   { label: "Redux" },
   { label: "Javascript" },
+  { label: "Git" },
   { label: "CSS" },
   { label: "Bootstrap" },
   { label: "HTML" },
@@ -40,7 +41,7 @@ export function Landing() {
     const handleScroll = () => {
       if (landingRef.current) {
         const { top } = landingRef.current.getBoundingClientRect();
-        setOffset(top * 0.4); // Adjust the parallax effect speed as needed
+        setOffset(top * 0.2); // Adjust the parallax effect speed as needed
       }
     };
 
@@ -74,8 +75,8 @@ export function Landing() {
         </Text>
         {t("location")}
       </Text>
-      <Wrap>
-      <Button mt={"1.5"} transform={`translateY(${offset}px)`}>
+      <Wrap mt={"1.5"} transform={`translateY(${offset}px)`} >
+      <Button >
       <DownloadIcon/>&nbsp;&nbsp;Resume
       </Button>
       </Wrap>
