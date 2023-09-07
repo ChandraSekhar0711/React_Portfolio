@@ -17,7 +17,7 @@ export function LatestProjects() {
         })();
     }, []);
     const renderProjects = (project) => {
-        return <WrapItem flexDirection={"column"} key={project.id}>
+        return <WrapItem flexDirection={"column"} key={project.id} cursor="pointer">
 
             <ImageSlider imageList={project.images.map((image) => image.downloadURL)} />
             <HStack gap={100}>
@@ -41,7 +41,7 @@ export function LatestProjects() {
     return (
         <Flex direction={"column"} w="100%">
             <Heading>{t("project")}</Heading>
-            <Wrap mt={10} spacing="50" >
+            <Wrap mt={10} spacing={{base:50,md:150}} >
                 {projects?.map(renderProjects)}
             </Wrap>
         </Flex>
